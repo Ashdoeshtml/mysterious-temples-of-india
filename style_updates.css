@@ -1,0 +1,275 @@
+:root {
+  --primary-color: #8b3a0f;
+  --secondary-color: #3d1c02;
+  --accent-color-1: #d4702a;
+  --accent-color-2: #f2c97e;
+  --accent-color-3: #8b3a0f;
+  --accent-color-4: #d4702a;
+  --text-light: #fff5e0;
+  --text-dark: #2a1200;
+  --transition: all 0.3s ease;
+  --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  --card-shadow-hover: 0 15px 30px rgba(212, 112, 42, 0.25);
+}
+
+/* Navbar styles */
+.navbar {
+  background: var(--secondary-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: var(--transition);
+  color: var(--text-light);
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.nav-link {
+  list-style: none;
+  display: flex;
+  text-decoration: none;
+  color: var(--text-light);
+  position: relative;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--accent-color-2);
+  transform: translateY(-2px);
+}
+
+.nav-link i {
+  margin-right: 8px;
+  vertical-align: middle;
+  font-size: 1.1em;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: -6px;
+  right: -6px;
+  bottom: -2px;
+  height: 2px;
+  background-color: var(--accent-color-1);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  background-color: var(--accent-color-1);
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #1a0a00 0%, #2a1000 100%);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* This is created by Ashwin; Not by you. */
+
+.header {
+  background: var(--secondary-color);
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 2px solid var(--accent-color-1);
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("temple-pattern.png") repeat;
+  opacity: 0.1;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 1s ease-out;
+}
+
+.updates-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.update-card {
+  background: #2a1200;
+  border-radius: 15px;
+  padding: 2.5rem;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-out forwards;
+  animation-delay: calc(var(--animation-order) * 0.1s);
+  opacity: 0;
+  border: 1px solid rgba(212, 112, 42, 0.2);
+}
+
+.update-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-color-1);
+  opacity: 0.9;
+}
+
+.update-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--accent-color-1);
+}
+
+.update-card h2 {
+  color: var(--accent-color-2);
+  margin-top: 0;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.update-card h2::before {
+  content: "📝";
+  font-size: 1.5rem;
+}
+
+.update-card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.update-card ul li {
+  padding: 0.7rem 0;
+  position: relative;
+  padding-left: 1.8rem;
+  transition: var(--transition);
+  color: #e8d5b0;
+}
+
+.update-card ul li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color-1);
+  transition: var(--transition);
+}
+
+.update-card ul li:hover {
+  transform: translateX(5px);
+}
+
+.update-card ul li:hover:before {
+  color: var(--accent-color-2);
+}
+
+.time-info {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(212, 112, 42, 0.3);
+  color: #a07850;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.time-info::before {
+  content: "⏱️";
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent-color-1);
+  color: var(--text-light);
+  padding: 8px;
+  z-index: 1001;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.back-to-top {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--text-light);
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.back-to-top:hover {
+  background: var(--accent-color-1);
+  border-color: var(--accent-color-1);
+  color: var(--text-light);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  background: var(--secondary-color);
+  color: var(--text-light);
+  border-top: 2px solid var(--accent-color-1);
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--text-light);
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.back-link:hover {
+  opacity: 0.8;
+}

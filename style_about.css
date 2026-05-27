@@ -1,0 +1,163 @@
+:root {
+  --primary-color: #8b3a0f;
+  --secondary-color: #3d1c02;
+  --accent-color-1: #d4702a;
+  --accent-color-2: #f2c97e;
+  --accent-color-3: #8b3a0f;
+  --accent-color-4: #d4702a;
+  --text-light: #fff5e0;
+  --text-dark: #2a1200;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #1a0a00 0%, #2a1000 100%);
+  min-height: 100vh;
+}
+
+/* Navbar styles from index.css */
+.navbar {
+  background: var(--secondary-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: var(--transition);
+  color: var(--text-light);
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.nav-link {
+  list-style: none;
+  display: flex;
+  text-decoration: none;
+  color: var(--text-light);
+  position: relative;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--accent-color-2);
+  transform: translateY(-2px);
+}
+
+.nav-link i {
+  margin-right: 8px;
+  vertical-align: middle;
+  font-size: 1.1em;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: -6px;
+  right: -6px;
+  bottom: -2px;
+  height: 2px;
+  background-color: var(--accent-color-1);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* About page specific styles */
+.about-header {
+  background: var(--secondary-color);
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+  border-bottom: 2px solid var(--accent-color-1);
+}
+
+.about-header h1 {
+  font-size: 3rem;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.mission-section,
+.team-section {
+  background: #2a1200;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  transition: var(--transition);
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  border: 1px solid rgba(212, 112, 42, 0.2);
+  color: #e8d5b0;
+}
+
+.mission-section:hover,
+.team-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(212, 112, 42, 0.25);
+  border-color: var(--accent-color-1);
+}
+
+section h2 {
+  color: var(--accent-color-2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+section h2 i {
+  color: var(--accent-color-1);
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.team-member i {
+  font-size: 4rem;
+  color: var(--accent-color-2);
+  margin-bottom: 1rem;
+}
+
+.team-member h3 {
+  color: var(--accent-color-2);
+  margin: 0.5rem 0;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  background: var(--secondary-color);
+  color: var(--text-light);
+  border-top: 2px solid var(--accent-color-1);
+}

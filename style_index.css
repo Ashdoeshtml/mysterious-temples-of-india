@@ -1,0 +1,194 @@
+:root {
+  --primary-color: #8b3a0f;
+  --secondary-color: #3d1c02;
+  --accent-color-1: #d4702a;
+  --accent-color-2: #f2c97e;
+  --accent-color-3: #8b3a0f;
+  --accent-color-4: #d4702a;
+  --text-light: #fff5e0;
+  --text-dark: #2a1200;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #1a0a00 0%, #2a1000 100%);
+  min-height: 100vh;
+}
+
+/* This is created by Ashwin; Not by you. */
+
+/* Navbar styles */
+.navbar {
+  background: var(--secondary-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: var(--transition);
+  color: var(--text-light);
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.nav-link {
+  list-style: none;
+  display: flex;
+  text-decoration: none;
+  color: var(--text-light);
+  position: relative;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--accent-color-2);
+  transform: translateY(-2px);
+}
+
+.nav-link i {
+  margin-right: 8px;
+  vertical-align: middle;
+  font-size: 1.1em;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: -6px;
+  right: -6px;
+  bottom: -2px;
+  height: 2px;
+  background-color: var(--accent-color-1);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  background-color: var(--accent-color-1);
+}
+
+.header {
+  background: var(--secondary-color);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 2px solid var(--accent-color-1);
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  animation: fadeIn 1s ease-out;
+}
+
+.temple-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Thanks to Dracula Theme for its amazing theme.  */
+
+.temple-card {
+  background: #2a1200;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  transition: var(--transition);
+  border: 1px solid rgba(212, 112, 42, 0.2);
+}
+
+.temple-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(212, 112, 42, 0.25);
+  border-color: var(--accent-color-1);
+}
+
+.temple-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.temple-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.temple-info a {
+  text-decoration: none;
+  color: var(--accent-color-2);
+  font-size: 1.2rem;
+  font-weight: bold;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: var(--transition);
+  padding: 0 6px;
+}
+
+.temple-info a i {
+  font-size: 1.1em;
+}
+
+.temple-info a:hover {
+  color: var(--accent-color-1);
+  transform: translateY(-2px);
+}
+
+.temple-info a::after {
+  content: "";
+  position: absolute;
+  left: -6px;
+  right: -6px;
+  bottom: -2px;
+  height: 2px;
+  background-color: var(--accent-color-1);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.temple-info a:hover::after {
+  transform: scaleX(1);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  background: var(--secondary-color);
+  color: var(--text-light);
+  border-top: 2px solid var(--accent-color-1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
